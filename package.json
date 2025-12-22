@@ -1,0 +1,46 @@
+{
+  "name": "account-rotator",
+  "version": "1.0.0",
+  "description": "Плагин для автоматической ротации аккаунтов бота. Позволяет менять username и password.",
+  "main": "index.js",
+  "author": "merka",
+  "botpanel": {
+    "icon": "RefreshCw",
+    "categories": ["Utility"],
+    "settings": {
+      "mode": {
+        "type": "select",
+        "label": "Режим ротации",
+        "description": "Когда менять аккаунты",
+        "options": [
+          { "value": "startup", "label": "При каждом запуске бота" },
+          { "value": "interval", "label": "Каждые N минут" }
+        ],
+        "default": "interval"
+      },
+      "interval": {
+        "type": "number",
+        "label": "Интервал (минуты)",
+        "description": "Как часто менять аккаунт (работает только в режиме 'Каждые N минут')",
+        "default": 30,
+        "dependsOn": { "field": "mode", "value": "interval" }
+      },
+      "accounts": {
+        "type": "string[]",
+        "label": "Список аккаунтов",
+        "description": "Формат: username:password (по одному на строку)",
+        "default": []
+      },
+      "order": {
+        "type": "select",
+        "label": "Порядок смены",
+        "description": "Как выбирается следующий аккаунт",
+        "options": [
+          { "value": "sequential", "label": "По порядку (первый → второй → третий → первый)" },
+          { "value": "random", "label": "Случайный выбор" }
+        ],
+        "default": "sequential"
+      }
+    }
+  }
+}
