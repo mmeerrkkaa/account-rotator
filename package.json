@@ -6,15 +6,23 @@
   "author": "merka",
   "botpanel": {
     "icon": "RefreshCw",
-    "categories": ["Utility"],
+    "categories": [
+      "Utility"
+    ],
     "settings": {
       "mode": {
         "type": "select",
         "label": "Режим ротации",
         "description": "Когда менять аккаунты",
         "options": [
-          { "value": "startup", "label": "При каждом запуске бота" },
-          { "value": "interval", "label": "Каждые N минут" }
+          {
+            "value": "startup",
+            "label": "При каждом запуске бота"
+          },
+          {
+            "value": "interval",
+            "label": "Каждые N минут"
+          }
         ],
         "default": "interval"
       },
@@ -23,7 +31,10 @@
         "label": "Интервал (минуты)",
         "description": "Как часто менять аккаунт (работает только в режиме 'Каждые N минут')",
         "default": 30,
-        "dependsOn": { "field": "mode", "value": "interval" }
+        "dependsOn": {
+          "field": "mode",
+          "value": "interval"
+        }
       },
       "accounts": {
         "type": "string[]",
@@ -36,11 +47,27 @@
         "label": "Порядок смены",
         "description": "Как выбирается следующий аккаунт",
         "options": [
-          { "value": "sequential", "label": "По порядку (первый → второй → третий → первый)" },
-          { "value": "random", "label": "Случайный выбор" }
+          {
+            "value": "sequential",
+            "label": "По порядку (первый → второй → третий → первый)"
+          },
+          {
+            "value": "random",
+            "label": "Случайный выбор"
+          }
         ],
         "default": "sequential"
       }
     }
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mmeerrkkaa/account-rotator"
+  },
+  "keywords": [
+    "blockmine",
+    "blockmine-plugin",
+    "minecraft",
+    "mineflayer"
+  ]
 }
