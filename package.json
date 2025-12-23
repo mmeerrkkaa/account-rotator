@@ -1,6 +1,6 @@
 {
   "name": "account-rotator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Плагин для автоматической ротации аккаунтов бота. Позволяет менять username и password.",
   "main": "index.js",
   "author": "merka",
